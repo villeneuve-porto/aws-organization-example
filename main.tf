@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-central-1"
+  region = "eu-west-1"
 }
 
 provider "aws" {
@@ -8,7 +8,7 @@ provider "aws" {
   }
 
   alias  = "users"
-  region = "eu-central-1"
+  region = "eu-west-1"
 }
 
 provider "aws" {
@@ -17,7 +17,7 @@ provider "aws" {
   }
 
   alias  = "staging"
-  region = "eu-central-1"
+  region = "eu-west-1"
 }
 
 provider "aws" {
@@ -26,7 +26,7 @@ provider "aws" {
   }
 
   alias  = "production"
-  region = "eu-central-1"
+  region = "eu-west-2"
 }
 
 resource "aws_organizations_organization" "organization" {

@@ -1,16 +1,20 @@
-resource "aws_s3_bucket" "this" {
+resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  acl    = "private"
+  //acl    = "private"
 
-  versioning {
-    enabled = true
-  }
+  //versioning {
+  //  enabled = true
+  //}
 
   lifecycle {
     prevent_destroy = true
   }
 }
 
+resource "aws_s3_bucket_acl" "bucket-acl" {
+  bucket = aws_s3_bucket.bucket.id
+  acl = "private"
+}
 resource "aws_dynamodb_table" "this" {
   name         = var.table_name
   hash_key     = "LockID"
